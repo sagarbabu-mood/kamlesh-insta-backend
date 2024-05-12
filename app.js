@@ -5,11 +5,7 @@ const {mongoUrl} = require('./keys')
 const cors = require('cors')
 const PORT = process.env.port || 3005;
 
-app.use(cors({
-    origin: ["https://deploy-mern-1whq.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true
-}))
+app.use(cors())
 
 const path = require('path')
 
