@@ -4,7 +4,13 @@ const mongoose = require('mongoose')
 const {mongoUrl} = require('./keys')
 const cors = require('cors')
 const PORT = process.env.port || 3005;
-app.use(cors())
+
+app.use(cors({
+    origin: ["https://deploy-mern-1whq.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true
+}))
+
 const path = require('path')
 
 require('./models/model')
